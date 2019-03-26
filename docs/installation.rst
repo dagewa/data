@@ -93,7 +93,7 @@ file named ``conftest.py`` in the top level of your project:
     try:
         from dials_data import *
     except ImportError:
-        @pytest.fixture
+        @pytest.fixture(scope="session")
         def dials_data():
             pytest.skip("Test requires python package dials_data")
 
